@@ -1,0 +1,1 @@
+# 9! = 362880 is a 6 digit number which means that any 7 digit number can't expressed as a sum of the factorial of their digits.
