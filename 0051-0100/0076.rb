@@ -1,18 +1,7 @@
-def factorial(n)
-  i = 0
-  k = 1
-  while i < n
-    k *= i + 1
-    i += 1
-  end
-  k
+list = [2]
+i = 0
+while i < 10
+  list << list.sum - 1
+  i += 1
 end
-
-def combination(n,m)
-  factorial(n) / (factorial(m) * factorial(n-m))
-end
-
-ans = 0
-i = 1
-while i < 100
-  4c1 + 4c2 + 4c3 = 
+p list
