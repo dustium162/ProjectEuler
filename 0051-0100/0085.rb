@@ -1,17 +1,23 @@
 # The number of subrectangles that an A x B rectangle contains is A*(A+1)*B*(B+1)/4
+def num(a,b)
+  a*(a+1)*b*(b+1)/4
+end
 a = 1
-ans = 10**10
-ans_a = 0
-ans_b = 0
+diff = 10**10
+ans = 0
 while a <= 2000
   b = 1
-  while a*(a+1)*b*(b+1)/4 < 2000000
+  while num(a,b) < 2000000
+    num = num(a,b)
+    if diff > 2000000-num
+      diff = 2000000-num
+      ans = a*b
+    end
     b += 1
   end
-  if a*(a+1)*b*(b+1)/4 - 2000000 < 2000000 - a*(a+1)*b*(b-1)/4
-    ans = a*(a+1)*b*(b+1)/4 - 2000000 if ans > a*(a+1)*b*(b+1)/4 - 2000000
-  else
-    ans = 2000000 - a*(a+1)*b*(b-1)/4 if ans > 2000000 - a*(a+1)*b*(b-1)/4
+  if diff > num(a,b) - 2000000
+    diff = num(a,b) - 2000000
+    ans = a*b
   end
   a += 1
 end
